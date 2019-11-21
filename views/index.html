@@ -18,6 +18,11 @@
         <script src="/socket.io/socket.io.js"></script>
     </head>
     <body>
+        <div id="input">
+            <input type="text" id="username" placeholder="Enter username">
+            <button id="confirm">Confirm</button>
+
+        </div>
         <div class="block1">
             <div class="navbar">
                 <p style="float:left">Online Users</p>
@@ -76,12 +81,20 @@
                 }
                 //$('#list').html(html);
             });
+            $(document).ready(function(){
+                $("#confirm").click(function(){
+                    var username = $("#username").val();
+                    socket.emit('username', username, function(data){});
+                });
+            });
+            /*
             var username = prompt('Enter your username: ');
             socket.emit('username', username, function(data){
                 if(!data){
                     alert('Username is already taken');
                 }
             });
+            */
             /*
             $('#messages').bind("keypress", () => {
                 socket.emit('typing');
