@@ -20,6 +20,7 @@
     <body>
         <div id="input">
             <input type="text" id="username" placeholder="Enter username">
+            <input type="password" id="password" placeholder="Enter password">
             <button id="confirm">Confirm</button>
 
         </div>
@@ -82,9 +83,16 @@
                 //$('#list').html(html);
             });
             $(document).ready(function(){
+                $(".block2").hide();
+                $(".block1").hide();
+                $("#chatForm").hide();
                 $("#confirm").click(function(){
                     var username = $("#username").val();
                     socket.emit('username', username, function(data){});
+                    $(".block2").show();
+                    $(".block1").show();
+                    $("#chatForm").show();
+                    $("#input").hide();
                 });
             });
             /*

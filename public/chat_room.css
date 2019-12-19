@@ -1,3 +1,7 @@
+html, body{
+    width: 100%;
+    height: 100%;
+}
 .navbar{
     width: 100%;
     overflow: auto;
@@ -34,6 +38,7 @@
     border: solid 2px rgb(1, 163, 238);
     float: left;
     overflow: auto;
+    margin-left: 0%;
 }
 .block2{
     width: 88%;
@@ -43,6 +48,7 @@
     border: solid 2px rgb(1, 163, 238);
     float: right;
     overflow: auto;
+    margin-left: 0%;
 }
 form{
     margin-top: 2px;
@@ -137,5 +143,32 @@ form button{
 }
 .block1 a:hover:before{
     border-color: transparent #0089e0 transparent transparent;
+}
+#input{
+    border: 1px solid black;
+    width: 300px;
+    margin-left: 40%;
+    height: 95px;
+    background-color: wheat;
+}
+#username, #password{
+    width: 200px;
+    height: 40px;
+    margin-left: 2px;
+    border-radius: 3px;
+    font-size: 20px;
+    margin-top: 5px;
+    padding-left: 5px;
+}
+#confirm{
+    width: 90px;
+    height: 40px;
+    font-size: 20px;
+    background-color: rgb(14, 224, 14);
+    color: white;
+    border-radius: 3px;
+}
+#confirm:hover{
+    background-color: green;
 }
 

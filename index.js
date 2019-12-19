@@ -84,6 +84,9 @@ io.sockets.on('connection', function(socket){
     socket.on('typing', (data) => {
         socket.broadcast.emit('typing', {username: socket.username});
     });
+    socket.on('file', function(file){
+        
+    });
 });
 
 const server = http.listen(3000, function(){
