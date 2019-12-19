@@ -4,6 +4,7 @@ const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 var formidable = require('formidable');
 var list_user = {};
+let port = process.env.PORT || 3000;
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/views/index.html');
@@ -25,6 +26,7 @@ io.sockets.on('connection', function(socket){
             io.emit('online', ' <i><strong> ' + socket.username + '</strong> joined the chat group </i>');
             list_user[socket.username] = socket;
             updateList();
+			console.log(username + ' joined the chat')
         }
     });
     function updateList()
@@ -84,11 +86,8 @@ io.sockets.on('connection', function(socket){
     socket.on('typing', (data) => {
         socket.broadcast.emit('typing', {username: socket.username});
     });
-    socket.on('file', function(file){
-        
-    });
 });
 
-const server = http.listen(3000, function(){
-    console.log('localhost:3000, Ready!');
+const server = http.listen(port, function(){
+    console.log('port: 3000, Ready!');
 });
