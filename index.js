@@ -1,5 +1,5 @@
 const express = require('express');
-var fs = require('fs')
+var fs = require('fs');
 const app = express();
 const https = require('https');
 const io = require('socket.io')(https);
