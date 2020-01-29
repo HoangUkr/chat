@@ -1,8 +1,8 @@
 const express = require('express');
 var fs = require('fs');
 const app = express();
-const https = require('https');
-const io = require('socket.io')(https);
+const http = require('http');
+const io = require('socket.io')(http);
 var formidable = require('formidable');
 var list_user = {};
 let port = process.env.PORT || 3000;
@@ -88,14 +88,15 @@ io.sockets.on('connection', function(socket){
         socket.broadcast.emit('typing', {username: socket.username});
     });
 });
-/*
+
 const server = http.listen(port, function(){
     console.log('port: 3000, Ready!');
 });
-*/
+/*
 https.createServer({
     key: fs.readFileSync('server.key'),
     cert: fs.readFileSync('server.cert')
 },app).listen(port, function(){
     console.log('port: 3000, Ready!!!');
 });
+*/
