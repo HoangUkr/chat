@@ -11,8 +11,6 @@
   "license": "ISC",
   "dependencies": {
     "express": "^4.15.2",
-    "file-system": "^2.2.2",
-    "formidable": "^1.2.1",
     "socket.io": "^2.3.0"
   }
 }

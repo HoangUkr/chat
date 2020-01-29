@@ -1,11 +1,12 @@
 const express = require('express');
 var fs = require('fs');
 const app = express();
-const http = require('http');
+const http = require('http').createServer(app);
 const io = require('socket.io')(http);
-var formidable = require('formidable');
 var list_user = {};
+
 let port = process.env.PORT || 3000;
+
 
 app.get('/', function(req, res){
     res.sendFile(__dirname + '/views/index.html');
