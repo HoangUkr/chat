@@ -4,8 +4,8 @@ const app = express();
 const http = require('http').createServer(app);
 const io = require('socket.io')(http);
 var list_user = {};
-var port = 3000;
-//let port = process.env.PORT || 3000;
+
+let port = process.env.PORT || 3000;
 
 
 app.get('/', function(req, res){
